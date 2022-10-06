@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <h1>Mi formulario</h1>
@@ -51,7 +53,7 @@
 
         <p>Eligue tu plato favorito</p>
         <p>
-           
+
             <select name="menus" id="menus">
                 <option value="codillo">codillo asado</option>
                 <option value="ensalada">Ensalada</option>
@@ -63,7 +65,7 @@
 
         <p>Eligue tus platos favoritos (Select multiple)</p>
         <p>
-           
+
             <select name="menusm[]" id="menus" multiple>
                 <option value="codillo">codillo asado</option>
                 <option value="ensalada">Ensalada</option>
@@ -73,9 +75,12 @@
 
         </p>
 
+        <input type="hidden" name="ip" value="<?= $_SERVER['SERVER_ADDR'] ?>">
+
         <input type="submit" name="envio" value="Enviar">
-        
+
     </form>
-    
+
 </body>
+
 </html>

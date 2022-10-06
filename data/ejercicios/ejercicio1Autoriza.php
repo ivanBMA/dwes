@@ -40,6 +40,17 @@
                 echo "<br> <h3 style=color:#FF0000> las paguinas estan vacias</h3>" ;
             }
 
+            if(isset($_POST["envio"])){
+                $titulo = $_POST["ip"];
+                if(!empty($_POST["ip"])){
+                    echo "<br> la ip : " . $titulo;
+                }
+                else{
+                    echo "<br> <h3 style=color:#FF0000>no se a introducido la ip </h3>" ;
+                }
+               
+            }
+            
 
 
         ?>
