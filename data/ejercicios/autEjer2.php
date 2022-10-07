@@ -5,14 +5,21 @@
     function redirecciona(){
         //redirect($url);
         //yaf_controller_abstract::redirect($url)
-        header('Location://ejercicios/ejercicio2.html');
+        header('Location:http://ejercicios.local/ejercicio2.html');
     }
 
     
     if(isset($_POST["nombre"]) && !empty($_POST["nombre"])){
         $titulo = $_POST["nombre"];
         if($titulo == "juan" || $titulo == "pedro"){
-            echo "<br> te saludo : " . $titulo;
+            if($a1=strlen($titulo) <=3){
+                redirecciona();
+            }
+            else{
+                echo "<br> te saludo : " . $titulo;
+            }
+            
+            
         }
         
         else{
