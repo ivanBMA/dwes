@@ -19,7 +19,7 @@
             echo "<br><hr>nombre del fichero Temporarl : " . $_FILES["myfile"][$file_get_contents];
 
             //Subir ficheros a una carpeta en concreto
-                $destino = "subidos/" .  $_FILES["myfile"]["name"];
+            $destino = "subidos/" .  $_FILES["myfile"]["name"];
             $flag = move_uploaded_file( $_FILES["myfile"]["tmp_name"] , $destino);
 
             echo $flag ? "Fichero subido correctamente":"Fallo de la subida";
