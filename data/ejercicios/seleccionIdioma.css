@@ -1,0 +1,53 @@
+header{
+    background-color: black;
+    color: white;
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+}
+
+header h2{
+    padding-top: 3vh;
+}
+
+section{
+    padding-top: 8vh;
+    padding-bottom: 6vh;
+    background-color: burlywood;
+    width: 100%;
+    height: 25vh;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+#text1 {
+    padding-top: 3vh;
+}
+footer{
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+}
+#menus{
+    background-color: green;
+    width: 20vh;
+    height: 5vh;
+    border-radius: 40px;
+    font-size: 20px;
+   
+}
+#botonEnvio{
+    background-color: yellow;
+    width: 40vh;
+    height: 5vh;
+    border-radius: 40px;
+    font-size: 20px;
+}
+#botonEnvio:hover{
+    background-color: grey;
+    width: 40vh;
+    height: 5vh;
+    border-radius: 40px;
+    font-size: 20px;
+    color: white;
+}
