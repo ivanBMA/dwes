@@ -6,30 +6,31 @@ function redirecciona(){
 }
    
     
-
-    if(isset($_POST["nombre"]) && !empty($_POST["nombre"])){
-        $array = array($_POST["nombre"]);
-        $vector=$_POST["nombre"];
+    if(isset($_GET["nombres"]) && !empty($_GET["nombres"])){
+        $nombres = $_GET["nombres"];
+        echo "<br> ==>" .$_GET["nombres"];
+        echo "<br> ->" . $nombres;
+        $frase = "Las cervezas Frias mejor";
         
-       $contar++;
-        if($contar < 4){
-            redirecciona($contar);
+        echo "<hr>";
+        $tok = strtok($nombres, ",");//Separa las palabras por la ,
+        
+        while ($tok !== false) {
+            echo "<br>Word=" . $tok . "<br/>";
+            $tok = strtok(",");
         }
-        else{
 
-
-            print_r($array);//Muestra los valores con su valor en el vector
-        echo "</ul>";
+        echo "<hr>";
+        $tok1 = strtok($frase, " ");//Separa las palabras por la ,
         
-        foreach($vector as $a){
-            echo "<br> El nombre del pais es : " . $a;
+        while ($tok1 !== false) {
+            echo "<br>Word=" . $tok1 . "<br/>";
+            $tok1 = strtok(" ");
         }
-        }
-        
-        
     }
+        
     else{
-      
+      echo "<br>No llego nada";
     }
     
     
