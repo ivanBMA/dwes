@@ -16,54 +16,49 @@
         -Logout.php => Cerrar la sesion y enlace/redireccion a login.php
     */
 
-    if(!isset($_POST["nombre"]) && !isset($_POST["contraseña"])){
-        $nombre = $_POST["nombre"];
-        $contraseña = $_POST["contraseña"];
-
-        if($nombre == 'usuario' && $contraseña == '1234'){
-            echo "bien Usuario";
-        }
-        else if($nombre == 'Admin' && $contraseña == '4467'){
-            echo "bien ADmin";
-        }
-        else{
-            echo "Login erroneo";
-        }
+    //Crear o unirse a una sesion ya creada
+    $array = [$_POST["nombre"], $_POST["contraseña"]];
+    session_start();
+    $_SESSION["miArray"] = $array;
+    
+    if($array[0] == "usuario" && $array[1] == "1234"){
+        $url = "Location:http://ejercicios.local/solucionest2/bienVenido.php?array=' . $array";
+        header($url);
+    }
+    else if($array[0] == "Admin" && $array[1] == "4467"){
+        header('Location:http://ejercicios.local/solucionest2/bienVenido.php');
+    }
+    else if(!empty($_POST["nombre"])){
+        echo "<br><p id='Rojo'> No existe ese usuario</p>";
     }
 
     ?>
+
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="login.css">
     </head>
     <body>
-    <form name="miformu" action="/solucionest2/ejercicioSesion.php" method="post">
-        <p>
-            <label for="nombre">nombre 1:</label>
-            <input type="text" name="nombre[]" id="numberA" >
 
-        </p>
-        <p>
-            <label for="nombre">contraseña 1:</label>
-            <input type="password" name="contraseña[]" id="numberA" >
+        <form name="miformu" action="http://ejercicios.local/solucionest2/ejercicioSesion.php" method="post">
+            <p>
+                <label for="nombre">nombre 1:</label>
+                <input type="text" name="nombre" id="numberA" >
 
-        </p>
-        <p>
-            <label for="nombre">nombre 2:</label>
-            <input type="text" name="nombre[]" id="numberA" >
+            </p>
+            <p>
+                <label for="nombre">contraseña 1:</label>
+                <input type="password" name="contraseña" id="numberA" >
 
-        </p>
-        <p>
-            <label for="nombre">contraseña 2:</label>
-            <input type="password" name="contraseña[]" id="numberA" >
-
-        </p>
-        
-        <input type="submit" name="envio" value="Enviar">
-    </form>
+            </p>
+            
+            <input type="submit" name="envio" value="Enviar">
+        </form>
         
     </body>
     </html>

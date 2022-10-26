@@ -1,6 +1,7 @@
 <?php
     //Crear o unirse a una sesion ya creada
-    session_start();
+    $array = ["misision"];
+    session_start($array);
 
 
     //$_SESSION["nombreDeLaVariable"]

@@ -1,12 +1,17 @@
 <?php
-    session_start();
+    session_start(); //Creo o me uno a una sesion
+
+    $nombreSesion = session_name();
+    echo "Nombre de sesion creada anteriormente : ". $nombreSesion;
+
+
     echo "<br> Esta es la paguina 2";
     echo "<br>He visitado la paguina " . $_SESSION["contador"] . " veces";
 
     //Esto cierra la sesion.
-    $_SESSION = array();
+    $_SESSION = array();    //unset($_SESSION)
     session_destroy();
-    setcookie(session_name(),'', time()-15,"/");
+    setcookie(session_name(),'', time() - 15, "/");
 
     /*Crear un entorno de login
         -La paguina de login:Usuario y password
@@ -21,6 +26,6 @@
         -Si logion ok => principal.php . Bienvenido usuario
         
             -Enlace logout.php
-            
+
         -Logout.php => Cerrar la sesion y enlace/redireccion a login.php
     */
