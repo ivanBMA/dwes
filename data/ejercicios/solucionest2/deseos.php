@@ -15,11 +15,21 @@ Lista de deseos
 //Usuario 1234  => rol = 0
 //Admin 4467    => rol = 1 
 
-    session_start();
+    
+session_start();
     $_SESSION["miArray"] .= "<br>" . $_POST["objetos"];
     
-        
-    
+    /*
+    $sesionDecodif = json_decode($sesionDecodif);
+    //$_SESSION["miArray"][4]="porsche";
+    //$sesionDecodif->{'listaDeseo'}[6] = "Lampara";
+
+    $miarray = get_object_vars($sesionDecodif);
+    print_r($miarray);
+    for($i = 0;$i < count($miarray, COUNT_RECURSIVE);$i++){
+        echo "<br> Elemento " . $i . " es " . $miarray["listaDeseo"][$i];
+    }
+    */
 
 ?>
 
@@ -35,7 +45,7 @@ Lista de deseos
 </head>
 
 <body >
-    <h2>Pajina de los Deseos</h2>
+    <h2>Pagina de los Deseos</h2>
     <hr>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 
